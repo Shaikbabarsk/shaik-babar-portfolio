@@ -47,8 +47,8 @@ export default function Hero() {
           {/* Stats */}
           <div className="mt-9 flex flex-wrap gap-8">
             <div>
-              <p className="text-3xl font-black text-white">3+</p>
-              <p className="mt-1 text-sm text-slate-500">Years Experience</p>
+              <p className="text-3xl font-black text-white">2+</p>
+              <p className="mt-1 text-sm text-slate-500">months Experience</p>
             </div>
 
             <div className="h-12 w-px bg-white/10" />
