@@ -1,134 +1,167 @@
+"use client";
+
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-slate-950 px-6 pt-24"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[#050816] px-6 pb-20 pt-28 sm:px-10 lg:px-16"
     >
-      {/* Background Effects */}
-      <div className="absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-blue-600/10 blur-3xl" />
+      {/* Background glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[8%] top-[15%] h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute bottom-[10%] right-[8%] h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/5 blur-3xl" />
+      </div>
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-2">
-        
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
         {/* Left Content */}
-        <div>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-sm text-cyan-300">
+        <div className="reveal-section">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-sm font-medium text-cyan-300">
             <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
             Available for opportunities
           </div>
 
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
-            Hello, I'm
+            Python Developer • Founder • AI Enthusiast
           </p>
 
-          <h1 className="text-5xl font-black leading-tight text-white sm:text-6xl lg:text-7xl">
-            Shaik
-            <span className="block bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Babar
+          <h1 className="max-w-4xl text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Hi, I&apos;m{" "}
+            <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+              Shaik Babar
             </span>
           </h1>
 
-          <h2 className="mt-5 text-xl font-semibold text-slate-200 sm:text-2xl">
-            Python Developer &{" "}
-            <span className="text-cyan-400">Founder</span>
+          <h2 className="mt-6 max-w-3xl text-2xl font-bold leading-tight text-slate-200 sm:text-3xl">
+            Building intelligent software, AI systems &amp; digital products.
           </h2>
 
-          <p className="mt-6 max-w-xl text-base leading-8 text-slate-400 sm:text-lg">
-            I build scalable software solutions, AI-powered applications,
-            modern web platforms, and cloud-based products. I am passionate
-            about turning ideas into practical digital experiences.
+          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+            Python Developer at BlueBridge Technologies and Founder &amp; CEO
+            of Zentryx Logic. I build scalable applications, AI-powered
+            solutions, cloud-based platforms, and innovative digital products.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          {/* Stats */}
+          <div className="mt-9 flex flex-wrap gap-8">
+            <div>
+              <p className="text-3xl font-black text-white">3+</p>
+              <p className="mt-1 text-sm text-slate-500">Years Experience</p>
+            </div>
+
+            <div className="h-12 w-px bg-white/10" />
+
+            <div>
+              <p className="text-3xl font-black text-white">10+</p>
+              <p className="mt-1 text-sm text-slate-500">Projects Built</p>
+            </div>
+
+            <div className="h-12 w-px bg-white/10" />
+
+            <div>
+              <p className="text-3xl font-black text-white">01</p>
+              <p className="mt-1 text-sm text-slate-500">Startup Founded</p>
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="rounded-full bg-cyan-400 px-7 py-3.5 font-bold text-slate-950 transition hover:bg-cyan-300 hover:shadow-lg hover:shadow-cyan-500/20"
+              className="premium-button rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-7 py-3.5 font-bold text-white shadow-lg shadow-cyan-500/20 transition duration-300 hover:-translate-y-1"
             >
               View My Work
             </a>
 
             <a
-              href="#contact"
-              className="rounded-full border border-white/15 bg-white/5 px-7 py-3.5 font-bold text-white transition hover:border-cyan-400/50 hover:bg-cyan-400/10"
+              href="/resume/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/15 bg-white/5 px-7 py-3.5 font-bold text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/10"
             >
-              Contact Me
+              Download Resume
             </a>
           </div>
 
-          {/* Quick Stats */}
-          <div className="mt-12 flex flex-wrap gap-8 border-t border-white/10 pt-8">
-            <div>
-              <p className="text-2xl font-bold text-white">3+</p>
-              <p className="mt-1 text-xs uppercase tracking-wider text-slate-500">
-                Years Experience
-              </p>
-            </div>
+          {/* Social Links */}
+          <div className="mt-8 flex items-center gap-5">
+            <a
+              href="https://github.com/Shaikbabarsk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-slate-400 transition hover:text-cyan-400"
+            >
+              GitHub
+            </a>
 
-            <div>
-              <p className="text-2xl font-bold text-white">10+</p>
-              <p className="mt-1 text-xs uppercase tracking-wider text-slate-500">
-                Projects
-              </p>
-            </div>
+            <span className="h-1 w-1 rounded-full bg-slate-700" />
 
-            <div>
-              <p className="text-2xl font-bold text-white">1</p>
-              <p className="mt-1 text-xs uppercase tracking-wider text-slate-500">
-                Startup
-              </p>
-            </div>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-slate-400 transition hover:text-cyan-400"
+            >
+              LinkedIn
+            </a>
+
+            <span className="h-1 w-1 rounded-full bg-slate-700" />
+
+            <a
+              href="mailto:zentryxlogic@gmail.com"
+              className="text-sm font-medium text-slate-400 transition hover:text-cyan-400"
+            >
+              Email
+            </a>
           </div>
         </div>
 
-        {/* Right Visual */}
-        <div className="relative flex justify-center lg:justify-end">
-          <div className="relative flex h-80 w-80 items-center justify-center sm:h-96 sm:w-96">
-            
-            {/* Outer Rings */}
-            <div className="absolute inset-0 rounded-full border border-cyan-400/10" />
-            <div className="absolute inset-6 rounded-full border border-blue-400/10" />
-            <div className="absolute inset-12 rounded-full border border-purple-400/10" />
+        {/* Right Profile Image */}
+        <div className="reveal-section reveal-delay-2 relative mx-auto w-full max-w-md">
+          {/* Outer glow */}
+          <div className="glow-pulse absolute inset-4 rounded-full bg-cyan-400/20 blur-3xl" />
 
-            {/* Main Card */}
-            <div className="relative z-10 flex h-56 w-56 flex-col items-center justify-center rounded-3xl border border-white/10 bg-white/5 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl sm:h-64 sm:w-64">
-              <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 text-2xl font-black text-slate-950 shadow-xl shadow-cyan-500/20">
-                SB
-              </div>
+          {/* Decorative rings */}
+          <div className="absolute -inset-5 rounded-full border border-cyan-400/10" />
+          <div className="absolute -inset-10 rounded-full border border-blue-500/5" />
 
-              <p className="text-lg font-bold text-white">Python Developer</p>
-              <p className="mt-1 text-sm text-slate-400">
-                AI • Web • Cloud
-              </p>
+          {/* Profile card */}
+          <div className="animated-border float-slow relative aspect-square overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/70 p-2 shadow-2xl shadow-cyan-950/40 backdrop-blur-xl">
+            <div className="relative h-full w-full overflow-hidden rounded-[1.6rem] bg-slate-950">
+              <Image
+                src="/images/profile.jpg"
+                alt="Shaik Babar - Python Developer"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 640px) 256px, 320px"
+              />
+
+              {/* Image overlay */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050816]/60 via-transparent to-cyan-400/5" />
             </div>
+          </div>
 
-            {/* Floating Tags */}
-            <div className="absolute left-0 top-10 rounded-xl border border-white/10 bg-slate-900/80 px-4 py-2 text-sm font-semibold text-cyan-300 shadow-xl backdrop-blur">
-              Python
-            </div>
+          {/* Floating badge */}
+          <div className="absolute -bottom-5 -left-5 rounded-2xl border border-white/10 bg-slate-900/90 px-5 py-4 shadow-xl backdrop-blur-xl">
+            <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
+              Currently
+            </p>
+            <p className="mt-1 font-bold text-white">
+              Python Developer
+            </p>
+            <p className="text-sm text-cyan-400">BlueBridge Technologies</p>
+          </div>
 
-            <div className="absolute right-0 top-24 rounded-xl border border-white/10 bg-slate-900/80 px-4 py-2 text-sm font-semibold text-blue-300 shadow-xl backdrop-blur">
-              AI / ML
-            </div>
-
-            <div className="absolute bottom-12 left-4 rounded-xl border border-white/10 bg-slate-900/80 px-4 py-2 text-sm font-semibold text-purple-300 shadow-xl backdrop-blur">
-              Full Stack
-            </div>
-
-            <div className="absolute bottom-0 right-5 rounded-xl border border-white/10 bg-slate-900/80 px-4 py-2 text-sm font-semibold text-cyan-300 shadow-xl backdrop-blur">
-              Cloud
-            </div>
+          {/* AI badge */}
+          <div className="absolute -right-4 top-10 rounded-2xl border border-cyan-400/20 bg-slate-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
+            <p className="text-xs text-slate-500">Focus</p>
+            <p className="font-bold text-cyan-300">AI • Cloud • Software</p>
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <a
-        href="#about"
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs text-slate-500 sm:flex"
-      >
-        <span>Scroll to explore</span>
-        <span className="h-8 w-px bg-gradient-to-b from-cyan-400 to-transparent" />
-      </a>
     </section>
   );
 }
